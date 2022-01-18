@@ -23,11 +23,11 @@ If a new static file is created or you find a file that doesn't have (or updates
 
 For example: ```script src="{% static 'exercises/assets/js/utils.js``` would have his src update as follows: ```script src="{% static 'exercises/assets/js/utils.js?v={{SYS_VERSION}}' %}"```
 
-# Robotics Academy Architecture
-## Robotics Academy frontend
+Frontend and Backend
+## Frontend
 Robotics frontend is served from a Django webserver running inside the RADI. Each exercise page communicates with different elements of the RADI in order to interact with the simulation.
 
-## Robotics Academy backend
+## Backend
 The Robotics Academy Docker Image (RADI) has several exercises available using Gazebo and STDR. In order to request and interact with the exercises, the container has a websocket port (8765) and a communication protocol (Robotics Academy Manager Protocol, or RAMP). Each exercise opens 1, 2 or more websockets to interact specifically with the exercise and receive data. The RAMP includes these commands:
 
     “open” in order to start an exercise specified on the field “exercise”
